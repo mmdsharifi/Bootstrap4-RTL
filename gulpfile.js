@@ -4,8 +4,9 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'), // Add browser syns plugin
     postcss = require('gulp-postcss'),
     rename = require('gulp-rename'),
+    rtlcss = require('gulp-rtlcss'),
     bower = require('gulp-bower');
-    
+
     var bootstrapPath ='./bower_components/bootstrap/scss';
     var fontawesomePath = './bower_components/font-awesome/scss';
 var config = {
@@ -41,6 +42,8 @@ gulp.task('css', function () {
         return gulp.src(config.sassPath + '/style.scss')
           .pipe(sass({ includePaths : [].concat( bootstrapPath , fontawesomePath ) }).on('error', sass.logError))
           .pipe(postcss(processors))
+          .pipe(rtlcss())
+          .pipe(rename({ suffix: '-rtl' })) 
           .pipe(gulp.dest('./public/css'));
 });
 

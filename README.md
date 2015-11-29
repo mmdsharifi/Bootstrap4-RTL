@@ -1,5 +1,9 @@
 # gulp-rtlBootstrap-fontawesome
-An awesome rtl bootstrap with gulp
+A RTL bootstrap version 4 work with gulp
 ==
-my Gulp tutorial in [dotnettips.info](http://www.dotnettips.info/post/2208/gulp-1)
-
+## Quick start
+1. clone this repository : [https://github.com/mmdsharifi/Bootstrap4-RTL.git]
+2. `cd Bootstrap4-RTL`
+3. `[sudo] npm install`
+4. `gulp`
+5. `gulp watch` and enjoy !
