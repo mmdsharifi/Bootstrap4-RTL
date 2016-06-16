@@ -10,3 +10,8 @@
 
 ##install with bower
 `bower install bootstrap4-rtl`
+
+##Change log
+#### 0.1.2
+- update bootstrap version to alpha.2
+- add bootstrap.min.css

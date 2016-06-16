@@ -20,7 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "bootstrap#v4.0.0-alpha",
+    "bootstrap": "bootstrap#v4.0.0-alpha.2",
     "font-awesome": "*"
   }
 }

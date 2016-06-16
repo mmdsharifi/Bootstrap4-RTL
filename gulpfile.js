@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
     var bootstrapPath ='./bower_components/bootstrap/scss';
     var fontawesomePath = './bower_components/font-awesome/scss';
-var config = {
+    var config = {
         sassPath: './resources/sass',
         bowerDir: './bower_components'
     }
@@ -38,12 +38,12 @@ gulp.task('css', function () {
         var processors = [
 
         ];
-
+        // [].concat( bootstrapPath , fontawesomePath )
         return gulp.src(config.sassPath + '/style.scss')
-          .pipe(sass({ includePaths : [].concat( bootstrapPath , fontawesomePath ) }).on('error', sass.logError))
+          .pipe(sass({ includePaths : [bootstrapPath , fontawesomePath] }).on('error', sass.logError))
           .pipe(postcss(processors))
           .pipe(rtlcss())
-          .pipe(rename({ suffix: '-rtl' })) 
+          .pipe(rename({ suffix: '-rtl' }))
           .pipe(gulp.dest('./public/css'));
 });
 
