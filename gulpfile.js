@@ -1,10 +1,12 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     notify = require('gulp-notify'),
-    browserSync = require('browser-sync'), // Add browser syns plugin
+    browserSync = require('browser-sync'),
     postcss = require('gulp-postcss'),
     rename = require('gulp-rename'),
-    rtlcss = require('gulp-rtlcss'),
+    rtlcss = require('rtlcss'),
+    cssnano = require('cssnano'),
+    notify = require("gulp-notify")
     bower = require('gulp-bower');
 
     var bootstrapPath ='./bower_components/bootstrap/scss';
@@ -36,15 +38,18 @@ gulp.task('icons', function() {
 
 gulp.task('css', function () {
         var processors = [
-
+          cssnano,
+          rtlcss
         ];
         // [].concat( bootstrapPath , fontawesomePath )
         return gulp.src(config.sassPath + '/style.scss')
-          .pipe(sass({ includePaths : [bootstrapPath , fontawesomePath] }).on('error', sass.logError))
+          .pipe(sass({ includePaths : [bootstrapPath , fontawesomePath] }).on('error',  notify.onError(function (error) {
+            return error.message;
+          })))
           .pipe(postcss(processors))
-          .pipe(rtlcss())
-          .pipe(rename({ suffix: '-rtl' }))
-          .pipe(gulp.dest('./public/css'));
+          .pipe(rename({ suffix: '-rtl.alpha3.min' }))
+          .pipe(gulp.dest('./public/css'))
+          .pipe(notify("Sass files compiles successfuly!"));
 });
 
 // Add browserSync task
@@ -66,4 +71,4 @@ gulp.task('watch', ['css', 'browserSync'], function() {
 
 // Run this task : gulp
 // OR gulp default
-gulp.task('default', ['bower', 'icons', 'css', 'js']);
+gulp.task('default', ['bower', 'icons', 'css', 'js', 'watch']);

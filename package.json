@@ -24,13 +24,14 @@
   "homepage": "https://github.com/mmdsharifi/Bootstrap4-RTL",
   "devDependencies": {
     "browser-sync": "*",
+    "cssnano": "^3.7.3",
     "gulp": "^3.9.0",
     "gulp-bower": "*",
     "gulp-clean-css": "^2.0.10",
-    "gulp-notify": "*",
+    "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-rtlcss": "^0.1.4",
-    "gulp-sass": "^2.1.0"
+    "gulp-sass": "^2.1.0",
+    "rtlcss": "^2.0.6"
   }
 }
