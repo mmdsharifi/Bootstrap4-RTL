@@ -47,7 +47,7 @@ gulp.task('css', function () {
             return error.message;
           })))
           .pipe(postcss(processors))
-          .pipe(rename({ suffix: '-rtl.alpha3.min' }))
+          .pipe(rename({ suffix: '-rtl.alpha5.min' }))
           .pipe(gulp.dest('./public/css'))
           .pipe(notify("Sass files compiles successfuly!"));
 });

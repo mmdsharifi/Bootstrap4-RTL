@@ -13,6 +13,9 @@
 
 ##Change log
 
+### 0.1.5
+- update bootstrap version to alpha.5
+
 #### 0.1.4
 - update bootstrap version to alpha.4
 
