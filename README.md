@@ -1,5 +1,5 @@
 
-:star2:  RTL bootstrap version 4 workflow with gulp
+:star2:  RTL bootstrap version 4 workflow with gulp ([Demo](http://bs4-rtl.surge.sh/))
 --
 
 ## Quick start
