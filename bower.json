@@ -1,27 +1,27 @@
 {
-  "name": "Gulp-RTLbootstrap-fontawesome",
-  "version": "0.1.0",
-  "homepage": "https://github.com/mmdsharifi/Bootstrap4-RTL",
-  "authors": [
-    "Mohammad sharifi <mmdsharifi@yahoo.com>"
-  ],
-  "description": "An Bootstrap4 RTL Awesome Workflow",
-  "main": "index.html",
-  "keywords": [
-    "bootstrap4",
-    "gulp",
-    "Bootstrap4-RTL"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "bootstrap#v4.0.0-alpha.3",
-    "font-awesome": "*"
-  }
+    "name": "Gulp-RTLbootstrap-fontawesome",
+    "version": "0.1.0",
+    "homepage": "https://github.com/mmdsharifi/Bootstrap4-RTL",
+    "authors": [
+        "Mohammad sharifi <mmdsharifi@yahoo.com>"
+    ],
+    "description": "An Bootstrap4 RTL Awesome Workflow",
+    "main": "index.html",
+    "keywords": [
+        "bootstrap4",
+        "gulp",
+        "Bootstrap4-RTL"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "bootstrap#v4.0.0-alpha.6",
+        "font-awesome": "*"
+    }
 }

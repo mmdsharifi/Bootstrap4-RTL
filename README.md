@@ -13,6 +13,8 @@
 
 ##Change log
 
+#### 0.1.6
+- update bootstrap version to alpha.6
 #### 0.1.3
 - fixed loading persian font
 - add bootstrap.min.css (by cssnano: a postcss plugin)
