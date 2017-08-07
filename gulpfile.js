@@ -7,31 +7,27 @@ var gulp = require('gulp'),
     rtlcss = require('rtlcss'),
     cssnano = require('cssnano'),
     notify = require("gulp-notify")
-bower = require('gulp-bower');
 
-var bootstrapPath = './bower_components/bootstrap/scss';
-var fontawesomePath = './bower_components/font-awesome/scss';
+
+var bootstrapPath = './node_modules/bootstrap/scss/bootstrap';
+var fontawesomePath = './node_modules/font-awesome/scss';
 var config = {
         sassPath: './resources/sass',
-        bowerDir: './bower_components'
+        npmDir: './node_modules'
     }
-    // create a task to do bower install
-gulp.task('bower', function() {
-    return bower()
-        .pipe(gulp.dest(config.bowerDir))
-});
+
 
 // Copy js files to public folder
 gulp.task('js', function() {
-    return gulp.src([config.bowerDir + '/bootstrap/dist/js/bootstrap.min.js',
-            config.bowerDir + '/jquery/dist/jquery.min.js'
+    return gulp.src([config.npmDir + '/bootstrap/dist/js/bootstrap.min.js',
+            config.npmrDir + '/jquery/dist/jquery.min.js'
         ])
         .pipe(gulp.dest('./public/js'));
 });
 
 // Copy fontawesome icons to public/fonts folder
 gulp.task('icons', function() {
-    return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
+    return gulp.src(config.npmDir + '/font-awesome/fonts/**.*')
         .pipe(gulp.dest('./public/fonts'));
 });
 
@@ -71,4 +67,4 @@ gulp.task('watch', ['css', 'browserSync'], function() {
 
 // Run this task : gulp
 // OR gulp default
-gulp.task('default', ['bower', 'icons', 'css', 'js', 'watch']);
+gulp.task('default', ['icons', 'css', 'js', 'watch']);
