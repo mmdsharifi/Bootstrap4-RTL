@@ -1,6 +1,6 @@
 {
-  "name": "Gulp-RTLbootstrap4-fontawesome",
-  "version": "1.0.0",
+  "name": "bootstrap4rtl",
+  "version": "0.1.6",
   "description": "A Awesome workflow for bootstrap4rtl",
   "main": "index.html",
   "scripts": {
