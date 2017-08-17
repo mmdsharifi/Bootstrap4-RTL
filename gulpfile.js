@@ -12,44 +12,50 @@ var gulp = require('gulp'),
 var bootstrapPath = './node_modules/bootstrap/scss/bootstrap';
 var fontawesomePath = './node_modules/font-awesome/scss';
 var config = {
-        sassPath: './resources/sass',
-        npmDir: './node_modules'
-    }
+    sassPath: './resources/sass',
+    npmDir: './node_modules'
+}
 
 
 // Copy js files to public folder
-gulp.task('js', function() {
-    return gulp.src([config.npmDir + '/bootstrap/dist/js/bootstrap.min.js',
-            config.npmrDir + '/jquery/dist/jquery.min.js'
+gulp.task('js', function () {
+    return gulp.src([
+            config.npmDir + '/bootstrap/dist/js/bootstrap.min.js',
+            config.npmDir + '/jquery/dist/jquery.min.js',
+            config.npmDir + '/popper.js/dist/popper.js'
         ])
         .pipe(gulp.dest('./public/js'));
 });
 
 // Copy fontawesome icons to public/fonts folder
-gulp.task('icons', function() {
+gulp.task('icons', function () {
     return gulp.src(config.npmDir + '/font-awesome/fonts/**.*')
         .pipe(gulp.dest('./public/fonts'));
 });
 
 
-gulp.task('css', function() {
+gulp.task('css', function () {
     var processors = [
         cssnano,
         rtlcss
     ];
     // [].concat( bootstrapPath , fontawesomePath )
     return gulp.src(config.sassPath + '/style.scss')
-        .pipe(sass({ includePaths: [bootstrapPath, fontawesomePath] }).on('error', notify.onError(function(error) {
+        .pipe(sass({
+            includePaths: [bootstrapPath, fontawesomePath]
+        }).on('error', notify.onError(function (error) {
             return error.message;
         })))
         .pipe(postcss(processors))
-        .pipe(rename({ suffix: '-rtl.alpha6.min' }))
+        .pipe(rename({
+            suffix: '-rtl.beta.min'
+        }))
         .pipe(gulp.dest('./public/css'))
         .pipe(notify("Sass files compiles successfuly!"));
 });
 
 // Add browserSync task
-gulp.task('browserSync', function() {
+gulp.task('browserSync', function () {
     browserSync({
         server: {
             baseDir: './'
@@ -60,7 +66,7 @@ gulp.task('browserSync', function() {
 // Rerun the task when a file changes
 // Run this task : gulp watch
 
-gulp.task('watch', ['css', 'browserSync'], function() {
+gulp.task('watch', ['css', 'browserSync'], function () {
     gulp.watch(config.sassPath + '/**/*.scss', ['css']);
     browserSync.watch("./*.html").on("change", browserSync.reload); // browserSync watch task
 });
