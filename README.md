@@ -1,6 +1,8 @@
 
 :star2:  RTL bootstrap version 4 workflow with gulp ( [Demo](http://bs4-rtl.surge.sh/) )
 --
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 
 ## ☄️ Quick start
 1. `git clone https://github.com/mmdsharifi/Bootstrap4-RTL.git`

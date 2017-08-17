@@ -4,7 +4,8 @@
   "description": "A Awesome workflow for bootstrap4rtl",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   "homepage": "https://github.com/mmdsharifi/Bootstrap4-RTL",
   "devDependencies": {
     "browser-sync": "*",
+    "commitizen": "^2.9.6",
     "cssnano": "^3.7.3",
+    "cz-conventional-changelog": "^2.0.0",
     "gulp": "^3.9.0",
     "gulp-bower": "*",
     "gulp-clean-css": "^2.0.10",
@@ -37,5 +40,10 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
