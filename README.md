@@ -10,7 +10,7 @@
 3. `[sudo] npm install`
 4. `gulp` and enjoy !
 
-## ⚡️ Install with bower
+## ⚡️ Install with npm
 `npm install bootstrap4rtl`
 
 ## 🗓 Change log
